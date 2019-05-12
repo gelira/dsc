@@ -31,4 +31,34 @@ class ItemController extends Controller
         $u->items()->save(new Item($rq->item));
         return redirect()->route('listar');
     }
+
+    public function removerItem(Request $rq, $id)
+    {
+        $u = $rq->session()->get('usuario');
+        $i = Item::find($id);
+
+        if ($i == null)
+        {
+            $rq->session()->flash('message', 'Item não encontrado');
+            $rq->session()->flash('message-type', 'alert-danger');
+        }
+
+        else
+        {
+            if ($i->usuario->id != $u->id)
+            {
+                $rq->session()->flash('message', 'Você não tem permissão de remover esse item');
+                $rq->session()->flash('message-type', 'alert-danger');
+            }
+
+            else 
+            {
+                $rq->session()->flash('message', 'Item removido com sucesso');
+                $rq->session()->flash('message-type', 'alert-success');
+                $i->delete();
+            }
+        }
+
+        return redirect()->route('listar');
+    }
 }

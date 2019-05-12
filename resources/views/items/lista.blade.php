@@ -27,7 +27,9 @@
                         <td>{{ $i->quantidade }}</td>
                         <td>{{ $i->preco }}</td>
                         <td>{{ $i->created_at->format('H:i:s d/m/Y') }}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{ route('remover', ['id' => $i->id]) }}" class="btn btn-sm btn-danger">Remover</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

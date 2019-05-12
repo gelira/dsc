@@ -34,3 +34,5 @@ Route::get('/listar', 'ItemController@listar')->name('listar');
 Route::get('/criar-item', 'ItemController@criarItem')->name('criarItem');
 
 Route::post('/add', 'ItemController@add')->name('add');
+
+Route::get('/remover-item/{id}', 'ItemController@removerItem')->name('remover');
