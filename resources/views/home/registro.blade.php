@@ -5,20 +5,20 @@
 @section('conteudo')
 <h3>Registrar-se</h3>
 <hr />
-<form method="POST" action="">
+<form method="POST" action="{{ route('criar') }}">
     {{ csrf_field() }}
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email" class="form-control" id="email"
-                       name="usuarios[email]"
+                       name="usuario[email]" value="{{ old('usuario.email') }}"
                        required="required" placeholder="Informe seu e-mail.">
             </div>
             <div class="form-group">
                 <label for="usuario">Usuário</label>
                 <input type="text" class="form-control" id="usuario"
-                       name="usuarios[login]"
+                       name="usuario[login]" value="{{ old('usuario.login') }}"
                        required="required" placeholder="Informe um usuário.">
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="form-group">
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control" id="senha"
-                       name="usuarios[senha]"
+                       name="usuario[senha]"
                        required="required" placeholder="Informe uma senha.">
             </div>
             <div class="form-group">

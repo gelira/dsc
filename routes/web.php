@@ -22,3 +22,5 @@ Route::get('/', function(){
 Route::get('/registrar', function(){
     return view('home.registro');
 })->name('registrar');
+
+Route::post('/criar', 'UsuarioController@criar')->name('criar');
