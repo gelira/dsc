@@ -16,6 +16,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sobre</a>
                     </li>
+                    @if (session()->has('usuario'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sair') }}">Sair</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </nav>

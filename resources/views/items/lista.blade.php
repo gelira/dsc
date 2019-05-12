@@ -17,6 +17,7 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Data de criação</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                         <td>{{ $i->quantidade }}</td>
                         <td>{{ $i->preco }}</td>
                         <td>{{ $i->created_at->format('H:i:s d/m/Y') }}</td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>

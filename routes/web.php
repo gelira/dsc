@@ -32,3 +32,5 @@ Route::get('/sair', 'UsuarioController@sair')->name('sair');
 Route::get('/listar', 'ItemController@listar')->name('listar');
 
 Route::get('/criar-item', 'ItemController@criarItem')->name('criarItem');
+
+Route::post('/add', 'ItemController@add')->name('add');

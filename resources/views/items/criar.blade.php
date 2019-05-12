@@ -7,12 +7,12 @@
 @section('conteudo')
     <h3>Inserir item na lista de compras de {{ $usuario->login }}</h3>
     <hr>
-    <form action="" method="post">
+    <form action="{{ route('add') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" name="item[nome]" id="nome" required="required"
-                value="{{ old('item.nome') }}" placeholder="Nome do item" 
+                value="{{ old('item.nome') }}" placeholder="Nome do produto" 
                 class="form-control">
         </div>
         <div class="row">
@@ -27,8 +27,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" name="item[preco]" id="preco"
-                        value="{{ old('item.precp') }}" class="form-control"
+                    <input type="number" name="item[preco]" id="preco" step="0.01"
+                        value="{{ old('item.preco') }}" class="form-control"
                         required="required" placeholder="Preço dos produtos">
                 </div>
             </div>
