@@ -10,6 +10,11 @@ use App\Usuario;
 
 class UsuarioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('nao-autenticado')->except('sair');
+    }
+
     public function criar(CriarUsuarioRequest $rq)
     {
         $u = $rq->usuario;
