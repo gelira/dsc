@@ -17,4 +17,9 @@ class ItemController extends Controller
         $i = $u->items()->get();
         return view('items.lista', ['usuario' => $u, 'items' => $i]);
     }
+
+    public function criarItem(Request $rq)
+    {
+        return view('items.criar', ['usuario' => $rq->session()->get('usuario')]);
+    }
 }

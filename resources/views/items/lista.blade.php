@@ -31,4 +31,5 @@
             </tbody>
         </table>
     @endif
+    <a class="btn btn-primary" href="{{ route('criarItem') }}">Inserir novo item</a>
 @endsection
