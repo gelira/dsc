@@ -5,7 +5,7 @@
 @section('conteudo')
 <h3>Login</h3>
 <hr />
-<form method="POST" action="">
+<form method="POST" action="{{ route('entrar') }}">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="login">Usuário</label>

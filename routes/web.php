@@ -24,3 +24,9 @@ Route::get('/registrar', function(){
 })->name('registrar');
 
 Route::post('/criar', 'UsuarioController@criar')->name('criar');
+
+Route::post('/entrar', 'UsuarioController@entrar')->name('entrar');
+
+Route::get('/sair', 'UsuarioController@sair')->name('sair');
+
+Route::get('/listar', 'ItemController@listar')->name('listar');
