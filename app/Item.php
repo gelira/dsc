@@ -10,6 +10,7 @@ class Item extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+    protected $fillable = ['nome', 'quantidade', 'preco'];
 
     public function usuario()
     {
